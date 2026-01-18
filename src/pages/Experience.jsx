@@ -2,7 +2,8 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/lightswind/card";
 import { motion } from "framer-motion";
 import { Briefcase, MapPin, Calendar, Award } from "lucide-react";
-/*  DATA IMPORT */
+import { Link } from "react-router-dom";
+/* DATA IMPORT */
 import { experience } from "@/data/experience";
 
 function Experience() {
@@ -52,7 +53,7 @@ function Experience() {
             Professional <span className="text-blue-400">Experience</span>
           </h1>
           <p className="text-xl text-white/60 max-w-3xl mx-auto">
-            A track record of building impactful solutions, driving results, and 
+            A track record of building impactful solutions, driving results, and
             continuously evolving through diverse technical challenges.
           </p>
         </motion.div>
@@ -67,7 +68,7 @@ function Experience() {
           {/* TIMELINE LINE */}
           <div className="absolute left-0 md:left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-blue-500/50 via-blue-400/30 to-transparent hidden md:block" />
 
-          {experience.map((exp, index) => (
+          {experience.map((exp) => (
             <motion.div
               key={exp.role + exp.organization}
               variants={itemVariants}
@@ -78,13 +79,9 @@ function Experience() {
 
               {/* CONTENT CARD */}
               <div className="md:ml-20">
-                <motion.div
-                  whileHover={{ x: 8, scale: 1.01 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <motion.div whileHover={{ x: 8, scale: 1.01 }} transition={{ duration: 0.3 }}>
                   <Card variant="elevated" className="group">
                     <CardHeader>
-                      {/* ROLE AND ORGANIZATION */}
                       <div className="flex items-start justify-between gap-4 mb-3">
                         <div className="flex-1">
                           <CardTitle className="text-2xl group-hover:text-blue-400 transition-colors">
@@ -92,12 +89,13 @@ function Experience() {
                           </CardTitle>
                           <CardDescription className="text-base mt-1 flex items-center gap-2">
                             <Award size={16} className="text-blue-400" />
-                            <span className="font-medium text-blue-300">{exp.organization}</span>
+                            <span className="font-medium text-blue-300">
+                              {exp.organization}
+                            </span>
                           </CardDescription>
                         </div>
                       </div>
 
-                      {/* LOCATION AND DURATION */}
                       <div className="flex flex-wrap gap-4 text-sm text-white/60">
                         <div className="flex items-center gap-1.5">
                           <MapPin size={16} className="text-white/40" />
@@ -111,7 +109,6 @@ function Experience() {
                     </CardHeader>
 
                     <CardContent>
-                      {/* DESCRIPTION */}
                       <div className="space-y-2.5">
                         {exp.description.map((item, i) => (
                           <motion.div
@@ -129,7 +126,6 @@ function Experience() {
                         ))}
                       </div>
 
-                      {/* SKILLS/TECHNOLOGIES (if provided) */}
                       {exp.skills && exp.skills.length > 0 && (
                         <div className="mt-6 pt-6 border-t border-white/10">
                           <div className="flex flex-wrap gap-2">
@@ -152,20 +148,6 @@ function Experience() {
           ))}
         </motion.div>
 
-        {/* EMPTY STATE */}
-        {experience.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-20"
-          >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/5 border border-white/10 mb-4">
-              <Briefcase size={32} className="text-white/40" />
-            </div>
-            <p className="text-white/60 text-lg">No experience entries found.</p>
-          </motion.div>
-        )}
-
         {/* CTA SECTION */}
         {experience.length > 0 && (
           <motion.div
@@ -180,11 +162,12 @@ function Experience() {
                 Want to know more about my journey?
               </h3>
               <p className="text-white/60 mb-6">
-                Check out my detailed CV or get in touch to discuss how my experience 
+                Check out my detailed CV or get in touch to discuss how my experience
                 can contribute to your team's success.
               </p>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/cv" className="inline-block">
+                <Link to="/cv" className="inline-block">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
@@ -192,8 +175,9 @@ function Experience() {
                   >
                     View Full CV
                   </motion.button>
-                </a>
-                <a href="/contact" className="inline-block">
+                </Link>
+
+                <Link to="/contact" className="inline-block">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
@@ -201,7 +185,7 @@ function Experience() {
                   >
                     Get in Touch
                   </motion.button>
-                </a>
+                </Link>
               </div>
             </Card>
           </motion.div>
@@ -210,7 +194,10 @@ function Experience() {
 
       {/* DECORATIVE ELEMENTS */}
       <div className="fixed top-1/3 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl opacity-20 pointer-events-none animate-pulse" />
-      <div className="fixed bottom-1/3 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl opacity-20 pointer-events-none animate-pulse" style={{ animationDelay: '1s' }} />
+      <div
+        className="fixed bottom-1/3 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl opacity-20 pointer-events-none animate-pulse"
+        style={{ animationDelay: "1s" }}
+      />
     </section>
   );
 }

@@ -1,6 +1,6 @@
 // Aim: App root with global theme background
 
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 import Navbar from "@/components/layout/Navbar";
@@ -34,7 +34,7 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <>
       {/* GLOBAL COLOR LAYER */}
       <div className="min-h-screen bg-transparent">
         <Navbar />
@@ -42,6 +42,6 @@ export default function App() {
           <AnimatedRoutes />
         </main>
       </div>
-    </BrowserRouter>
+    </>
   );
 }
