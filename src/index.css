@@ -1,0 +1,68 @@
+/* Tailwind v4 */
+@import "tailwindcss";
+
+/* =========================
+   GLOBAL COLOR THEME
+   ========================= */
+
+:root {
+  --bg-gradient: linear-gradient(
+    135deg,
+    #020617 0%,
+    #020617 30%,
+    #020617 60%,
+    #020617 100%
+  );
+}
+
+/* Apply gradient to ALL pages */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(
+      circle at top left,
+      rgba(99, 102, 241, 0.15),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(168, 85, 247, 0.15),
+      transparent 40%
+    ),
+    #020617;
+  color: white;
+}
+
+/* Prevent white flashes */
+#root {
+  min-height: 100vh;
+  background: transparent;
+}
+
+/* Glass cards */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Premium headings */
+h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 600;
+}

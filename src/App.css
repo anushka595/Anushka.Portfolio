@@ -1,0 +1,9 @@
+/* App-specific styles - Minimal to avoid conflicts with theme */
+
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove any default styles that might interfere */

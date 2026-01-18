@@ -1,0 +1,39 @@
+:root {
+  --background: 220 25% 98%;
+  --foreground: 222 47% 11%;
+
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 220 15% 92%;
+  --secondary-foreground: 222 47% 11%;
+
+  --accent: 270 95% 75%;
+  --accent-foreground: 222 47% 11%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --border: 220 15% 90%;
+  --radius: 0.75rem;
+}
+
+/* PREMIUM DARK MODE */
+.dark {
+  --background: 222 47% 5%;
+  --foreground: 210 40% 98%;
+
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47% 5%;
+
+  --secondary: 222 47% 12%;
+  --secondary-foreground: 210 40% 98%;
+
+  --accent: 270 95% 75%;
+  --accent-foreground: 222 47% 5%;
+
+  --card: 222 47% 8%;
+  --card-foreground: 210 40% 98%;
+
+  --border: 222 47% 18%;
+}

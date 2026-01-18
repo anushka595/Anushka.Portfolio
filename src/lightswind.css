@@ -1,0 +1,100 @@
+/* ================================
+   LIGHTSWIND – CORE THEME VARIABLES
+   ================================ */
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+
+  --card: 210 40% 98%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 214 32% 91%;
+  --secondary-foreground: 222 47% 11%;
+
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 217 91% 60%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 217 91% 60%;
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 222 47% 11%;
+  --foreground: 0 0% 100%;
+
+  --card: 222 47% 14%;
+  --card-foreground: 0 0% 100%;
+
+  --popover: 222 47% 14%;
+  --popover-foreground: 0 0% 100%;
+
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 222 47% 20%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 222 47% 20%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 222 47% 20%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 222 47% 25%;
+  --input: 222 47% 25%;
+  --ring: 217 91% 60%;
+}
+
+/* ================================
+   BASE GLOBAL STYLES
+   ================================ */
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================
+   LIGHTSWIND UTILITIES
+   ================================ */
+
+.bg-background { background-color: hsl(var(--background)); }
+.bg-card { background-color: hsl(var(--card)); }
+
+.text-foreground { color: hsl(var(--foreground)); }
+.text-card-foreground { color: hsl(var(--card-foreground)); }
+.text-muted-foreground { color: hsl(var(--muted-foreground)); }
+
+.border-border { border-color: hsl(var(--border)); }
+
+/* ================================
+   CARD BASE FIX (CRITICAL)
+   ================================ */
+
+[data-card],
+.card,
+.custom-card {
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+}
